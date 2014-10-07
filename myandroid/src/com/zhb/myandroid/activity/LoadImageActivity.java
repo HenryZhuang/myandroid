@@ -67,7 +67,7 @@ public class LoadImageActivity extends Activity {
 	public void load(){
 //		String imagePath = "/storage/sdcard0/Pictures/Screenshots/7c6c1b05dab14ec7b2cad7146d08cad5.jpg";
 		String imagePath = "/storage/emulated/legacy/Pictures/1.jpeg";
-		System.out.println(new FileUtils(this).getSdPath());
+//		System.out.println(new FileUtils(this).getSdPath());
 		
 		Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
 		imgView.setImageBitmap(bitmap);
