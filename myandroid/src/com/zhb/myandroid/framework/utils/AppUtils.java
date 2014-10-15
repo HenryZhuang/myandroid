@@ -7,6 +7,7 @@ import android.app.ActivityManager.RunningAppProcessInfo;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -24,6 +25,18 @@ public class AppUtils {
 		throw new UnsupportedOperationException("cannot be instantiated");
 
 	}
+	
+    /**
+     * 获取ApplicationInfo
+     * @param context
+     * @return
+     * @throws Exception
+     */
+    public static ApplicationInfo getApplicationName(Context context, String packageName) throws Exception {  
+        PackageManager pm = context.getPackageManager();
+        PackageInfo packageInfo = pm.getPackageInfo(packageName, PackageManager.GET_UNINSTALLED_PACKAGES);
+        return packageInfo.applicationInfo;
+    }
 
 	/**
 	 * 获取应用程序名称
